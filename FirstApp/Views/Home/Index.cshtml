@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Muhammad Arsalan</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @foreach (var student in ViewBag.Students)
+    {
+        <label>@student</label>
+        <br />
+    }
+
+    @for (int i = 0; i < 10; i++)
+    {
+        <div style="margin-top: 20px;">
+            <label>Number: @i</label><br />
+            <label>Name: @ViewBag.FullName @ViewData["Qualification"]</label><br />
+            <label>Age: 12</label><br />
+            <label>Contact #: @TempData["Contact"]</label><br />
+            <label>Designation: .Net Dev</label>
+
+            @if (true)
+            {
+                
+            }
+
+        </div>
+
+        if (true)
+        {
+            
+        }
+    }
+</div>

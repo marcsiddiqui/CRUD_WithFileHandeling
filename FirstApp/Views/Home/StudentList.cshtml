@@ -1,0 +1,41 @@
+﻿@model FirstApp.Models.StudentListModel;
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Student List</h1>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="CreateStudent" style="float: left">Add New</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FullName</th>
+                <th>FatherName</th>
+                <th>Class</th>
+                <th>Section</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FullName</td>
+                    <td>@item.FatherName</td>
+                    <td>@item.Class</td>
+                    <td>@item.Section</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a class="btn btn-warning" href="@Url.Action("EditStudent", "Home", new { id = @item.Id })" style="float: left">Edit</a>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
