@@ -180,7 +180,40 @@ namespace FirstApp.Controllers
         [HttpPost]
         public IActionResult EditStudent(StudentModel model)
         {
-            
+            var filePath = "C:\\Users\\marsalan\\Desktop\\StudentData.txt";
+
+            if (!System.IO.File.Exists(filePath))
+                return RedirectToAction("StudentList");
+
+            var finalData = "";
+            if (System.IO.File.Exists(filePath))
+            {
+                var allLines = System.IO.File.ReadAllLines(filePath).ToList();
+                if (allLines != null && allLines.Any())
+                {
+                    foreach (var line in allLines)
+                    {
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            var lineData = line.Split(",");
+
+                            var lineNumber = Convert.ToInt32(lineData[0]);
+                            if (lineNumber == model.Id)
+                            {
+                                var studentline = lineNumber + "," + model.FullName + "," + model.FatherName + "," + model.Class + "," + model.Section + "," + model.Email;
+                                finalData = finalData + "\n" + studentline;
+                            }
+                            else
+                            {
+                                finalData = finalData + "\n" + line;
+                            }
+                        }
+                    }
+
+                    System.IO.File.WriteAllText(filePath, finalData);
+                    return RedirectToAction("StudentList");
+                }
+            }
 
             return View(model);
         }
