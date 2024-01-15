@@ -8,15 +8,17 @@
 
     <form method="post" action="EditStudent">
         <input name="Id" type="hidden" value="@Model.Id" />
-        <input name="FullName" type="text" placeholder="Full Name" value="@Model.FullName" />
+        <input name="FullName" id="FullName" type="text" placeholder="Full Name" value="@Model.FullName" />
         <br />
-        <input name="FatherName" type="text" placeholder="Father Name" value="@Model.FatherName" />
+        <input name="FatherName" id="FatherName" type="text" placeholder="Father Name" value="@Model.FatherName" />
         <br />
-        <input name="Class" type="text" placeholder="Class" value="@Model.Class" />
+        <input name="Class" id="Class" type="text" placeholder="Class" value="@Model.Class" />
         <br />
-        <input name="Section" type="text" placeholder="Section" value="@Model.Section" />
+        <input name="Section" id="Section" type="text" placeholder="Section" value="@Model.Section" />
         <br />
-        <input name="Email" type="text" placeholder="Email" value="@Model.Email" />
+        <input name="Email" id="Email" type="text" placeholder="Email" value="@Model.Email" />
+        <br />
+        <input name="PhoneNumber" id="PhoneNumber" type="text" placeholder="PhoneNumber" value="@Model.PhoneNumber" />
         <br />
         <button type="submit">Save Data</button>
     </form>

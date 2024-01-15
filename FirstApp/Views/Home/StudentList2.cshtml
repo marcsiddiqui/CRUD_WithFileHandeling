@@ -6,7 +6,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome Student List</h1>
-    <a class="btn btn-primary" asp-controller="Home" asp-action="CreateStudent" style="float: left">Add New</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="CreateStudent2" style="float: left">Add New</a>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -16,7 +16,6 @@
                 <th>Class</th>
                 <th>Section</th>
                 <th>Email</th>
-                <th>PhoneNumber</th>
                 <th></th>
             </tr>
         </thead>
@@ -30,10 +29,9 @@
                     <td>@item.Class</td>
                     <td>@item.Section</td>
                     <td>@item.Email</td>
-                    <td>@item.PhoneNumber</td>
                     <td>
-                        <a class="btn btn-warning" href="@Url.Action("EditStudent", "Home", new { id = @item.Id })" style="float: left">Edit</a>
-                        <a class="btn btn-danger" href="@Url.Action("DeleteStudent", "Home", new { id = @item.Id })" style="float: left">Delete</a>
+                        <a class="btn btn-warning" href="@Url.Action("EditStudent2", "Home", new { id = @item.Id })" style="float: left">Edit</a>
+                        <a class="btn btn-danger" href="@Url.Action("DeleteStudent2", "Home", new { id = @item.Id })" style="float: left">Delete</a>
                     </td>
                 </tr>
             }
